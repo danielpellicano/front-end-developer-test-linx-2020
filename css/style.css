@@ -172,3 +172,24 @@ a {
   background: #f0462d;
   color: #fff;
 }
+
+
+/* Section Help */
+
+#help .container {
+  display: flex;
+  justify-content: space-between;
+}
+
+#help .container .help-text {
+  max-width: 520px;
+}
+
+#help .container .help-form {
+  min-width: 340px;
+}
+
+#help .row-input {
+  display: flex;
+  flex-direction: column;
+}
