@@ -7,11 +7,11 @@
   <title>Linx Test Front End</title>
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
-  <link rel="stylesheet" href="js/script.js">
 
 </head>
+<link rel="stylesheet" href="js/script.js">
 
-<body>
+<body onload="functionToBeExecuted()">
 
   <!-- Header -->
   <header id="header">
@@ -50,20 +50,20 @@
         </p>
       </div>
       <div class="help-form">
-        <form action="">
+        <form name="help-form">
           <div class="row-input">
             <label for="name">Seu nome:</label>
-            <input type="text" name="name" id="name">
+            <input type="text" name="name" id="name" required>
           </div>
           <div class="row-input">
             <label for="email">E-mail:</label>
-            <input type="email" name="email" id="email">
+            <input type="email" name="email" id="email" required>
           </div>
           <div class="row-input">
             <label for="cpf">CPF:</label>
-            <input type="text" name="cpf" id="cpf">
+            <input type="text" name="cpf" id="cpf" required>
           </div>
-          <div class="row-input">
+          <div class="row-radio">
             <div class="col-radio">
               <input type="radio" id="male" name="gender" value="male">
               <label for="male">Masculino</label>
@@ -73,13 +73,60 @@
               <label for="female">Feminino</label>
             </div>
           </div>
+          <div class="row-button">
+            <input type="submit" name="submit" id="submit" value="Enviar">
+          </div>
         </form>
       </div>
     </div>
   </section>
-
   <!-- .Section Form -->
 
+  <!-- Section Products -->
+
+  <section id="products">
+    <div class="container">
+      <div class="row-product">
+        <!-- Product -->
+        <div class="product">
+          <div class="img-product">
+            <img src="http://imagens.pontofrio.com.br/Control/ArquivoExibir.aspx?IdArquivo=6624363" alt="">
+          </div>
+          <h4>Product Number 0</h4>
+          <p>Product long description number 0 just to make more than one like of text.</p>
+          <div class="preco">
+            <p>De: R$ R$ 266,00</p>
+            <strong>Por: R$ R$ 228,00</strong>
+            <span>ou 2 x de R$ R$ 114,00</span>
+          </div>
+          <div class="btn-comprar">
+            <a href="#">Comprar</a>
+          </div>
+        </div>
+        <!-- .Product -->
+      </div>
+    </div>
+  </section>
+
+  <!--<script>
+    window.onload = function() {
+      alert('teste');
+
+      const url = 'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1';
+      fetch(url, {
+          method: 'get' // opcional 
+        })
+        .then(function(response) {
+          console.log(response.json());
+        })
+        .catch(function(err) {
+          console.error(err);
+        });
+
+      return url;
+
+    };
+  </script>-->
 </body>
 
 </html>

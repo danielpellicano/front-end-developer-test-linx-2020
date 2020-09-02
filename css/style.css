@@ -176,6 +176,10 @@ a {
 
 /* Section Help */
 
+#help {
+  padding: 40px 0;
+}
+
 #help .container {
   display: flex;
   justify-content: space-between;
@@ -192,4 +196,54 @@ a {
 #help .row-input {
   display: flex;
   flex-direction: column;
+}
+
+#help h3 {
+  font-size: 20px;
+  color: #888888;
+  font-weight: normal;
+  letter-spacing: 0px;
+  margin-bottom: 30px;
+}
+
+#help .help-text p {
+  font-size: 12px;
+  line-height: 18px;
+  color: #888888;
+  margin-bottom: 20px;
+}
+
+#help label {
+  font-size: 12px;
+  color: #888888;
+  margin-bottom: 7px;
+}
+
+#help input {
+  padding: 0.344rem;
+  border: 1px solid #707070;
+  margin-bottom: 20px;
+}
+
+#help .row-radio {
+  display: flex;
+}
+
+#help .row-radio .col-radio:first-child {
+  margin-right: 40px;
+}
+
+#help input[type="submit"] {
+  display: block;
+  width: 100%;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  background: #fff;
+  padding: 0.734rem;
+  cursor: pointer;
+}
+
+#help input[type="submit"]:hover {
+  background: #707070;
+  color: #fff;
 }
