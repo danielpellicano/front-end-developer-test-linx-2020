@@ -3,10 +3,7 @@
 @font-face {
   font-family: 'Helvetica Neue';
   src: url('../fonts/HelveticaNeue.eot');
-  src: url('../fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/HelveticaNeue.woff2') format('woff2'),
-    url('../fonts/HelveticaNeue.woff') format('woff'),
-    url('../fonts/HelveticaNeue.ttf') format('truetype');
+  src: url('../fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue.woff2') format('woff2'), url('../fonts/HelveticaNeue.woff') format('woff'), url('../fonts/HelveticaNeue.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -14,13 +11,11 @@
 @font-face {
   font-family: 'Helvetica Neue Bold';
   src: url('../fonts/HelveticaNeue-Bold.eot');
-  src: url('../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
-    url('../fonts/HelveticaNeue-Bold.woff2') format('woff2'),
-    url('../fonts/HelveticaNeue-Bold.woff') format('woff'),
-    url('../fonts/HelveticaNeue-Bold.ttf') format('truetype');
+  src: url('../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue-Bold.woff2') format('woff2'), url('../fonts/HelveticaNeue-Bold.woff') format('woff'), url('../fonts/HelveticaNeue-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
+
 
 /* css Reset */
 
@@ -88,6 +83,7 @@ video {
   list-style: none;
 }
 
+
 /* CSS General */
 
 body {
@@ -107,6 +103,7 @@ a {
   margin-left: auto;
 }
 
+
 /* Header */
 
 #header {
@@ -117,6 +114,7 @@ a {
   align-items: center;
   color: #fff;
 }
+
 
 /*#header:after {
     content: '';
@@ -174,6 +172,7 @@ a {
   background: #f0462d;
   color: #fff;
 }
+
 
 /* Section Help */
 
@@ -260,6 +259,7 @@ a {
   color: #fff;
 }
 
+
 /* Products */
 
 #products .img-product {
@@ -305,6 +305,9 @@ a {
 #products .row-product {
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  min-height: 734px;
 }
 
 #products .row-product .product {
@@ -355,6 +358,47 @@ a {
   color: #888888;
   text-decoration: none;
 }
+
+#products .load-more {
+  text-align: center;
+  padding: 30px 15px;
+}
+
+#products .load-more button {
+  width: 260px;
+  height: 39px;
+  background: none;
+  border: 1px solid #707070;
+  border-radius: 4px;
+  margin: 0 auto;
+  display: block;
+  font-size: 16px;
+  color: #888888;
+}
+
+
+/* Loader */
+
+#loader {
+  border: 16px solid #f3f3f3;
+  /* Light grey */
+  border-top: 16px solid #e6391e;
+  /* Blue */
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 
 /* Newsletter */
 
@@ -421,6 +465,7 @@ a {
   display: block;
   text-align: center;
 }
+
 
 /* Footer */
 
