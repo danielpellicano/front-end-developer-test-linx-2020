@@ -7,8 +7,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
   </head>
-  <link rel="stylesheet" href="js/script.js" />
-
   <body>
     <!-- Header -->
     <header id="header">
@@ -61,18 +59,18 @@
           </p>
         </div>
         <div class="help-form">
-          <form name="help-form" onclick="validateForm()" method="post">
+          <form name="help-form" method="post">
             <div class="row-input">
               <label for="name">Seu nome:</label>
               <input type="text" name="name" id="name" />
             </div>
             <div class="row-input">
               <label for="email">E-mail:</label>
-              <input type="email" name="email" id="email" required />
+              <input type="email" name="email" id="email" />
             </div>
             <div class="row-input">
               <label for="cpf">CPF:</label>
-              <input type="text" name="cpf" id="cpf" required />
+              <input type="text" id="cpf" value="" name="cpf" maxlength="14" />
             </div>
             <div class="row-radio">
               <div class="col-radio">
@@ -85,7 +83,7 @@
               </div>
             </div>
             <div class="row-button">
-              <input type="submit" name="submit" id="submit" value="Enviar" />
+              <input type="submit" onclick="validateForm()" value="Enviar" />
             </div>
           </form>
         </div>
@@ -95,10 +93,12 @@
 
     <!-- Section Products -->
 
+    <div id="myData"></div>
+
     <section id="products">
       <div class="container">
         <h3><span>Sua seleção especial</span></h3>
-        <div class="row-product">
+        <div class="row-product" id="list-products">
           <!-- Product -->
           <div class="product">
             <div class="img-product">
@@ -229,24 +229,7 @@
       </div>
     </footer>
 
-    <script>
-      function validateForm() {
-        /* name validate */
-        let x = document.getElementById('name').value;
-        if (x == '') {
-          let name = document.getElementById('name');
-          alert('name teste');
-          name.classList.add('error');
-          return false;
-        }
-      }
-      function validateEmail(email) {
-        var re = /\S+@\S+\.\S+/;
-        return re.test(email);
-      }
-
-      console.log(validateEmail('anystring@anystring.anystring'));
-    </script>
+    <script></script>
 
     <!--<script>
     window.onload = function() {
@@ -267,5 +250,6 @@
 
     };
   </script>-->
+    <script src="js/script.js"></script>
   </body>
 </html>
