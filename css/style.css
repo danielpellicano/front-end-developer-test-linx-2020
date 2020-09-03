@@ -3,7 +3,10 @@
 @font-face {
   font-family: 'Helvetica Neue';
   src: url('../fonts/HelveticaNeue.eot');
-  src: url('../fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue.woff2') format('woff2'), url('../fonts/HelveticaNeue.woff') format('woff'), url('../fonts/HelveticaNeue.ttf') format('truetype');
+  src: url('../fonts/HelveticaNeue.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeue.woff2') format('woff2'),
+    url('../fonts/HelveticaNeue.woff') format('woff'),
+    url('../fonts/HelveticaNeue.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
@@ -11,11 +14,13 @@
 @font-face {
   font-family: 'Helvetica Neue Bold';
   src: url('../fonts/HelveticaNeue-Bold.eot');
-  src: url('../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'), url('../fonts/HelveticaNeue-Bold.woff2') format('woff2'), url('../fonts/HelveticaNeue-Bold.woff') format('woff'), url('../fonts/HelveticaNeue-Bold.ttf') format('truetype');
+  src: url('../fonts/HelveticaNeue-Bold.eot?#iefix') format('embedded-opentype'),
+    url('../fonts/HelveticaNeue-Bold.woff2') format('woff2'),
+    url('../fonts/HelveticaNeue-Bold.woff') format('woff'),
+    url('../fonts/HelveticaNeue-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
 }
-
 
 /* css Reset */
 
@@ -83,7 +88,6 @@ video {
   list-style: none;
 }
 
-
 /* CSS General */
 
 body {
@@ -103,7 +107,6 @@ a {
   margin-left: auto;
 }
 
-
 /* Header */
 
 #header {
@@ -114,7 +117,6 @@ a {
   align-items: center;
   color: #fff;
 }
-
 
 /*#header:after {
     content: '';
@@ -172,7 +174,6 @@ a {
   background: #f0462d;
   color: #fff;
 }
-
 
 /* Section Help */
 
@@ -259,7 +260,6 @@ a {
   color: #fff;
 }
 
-
 /* Products */
 
 #products .img-product {
@@ -276,6 +276,39 @@ a {
   justify-content: center;
   position: relative;
   overflow: hidden;
+  -webkit-transition: all 0.2s ease-in-out;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+#products .img-product:hover::before {
+  -webkit-animation: shine 0.75s;
+  animation: shine 0.75s;
+}
+
+#products .img-product:before {
+  position: absolute;
+  top: 0;
+  left: -75%;
+  z-index: 2;
+  display: block;
+  content: '';
+  width: 50%;
+  height: 100%;
+  background: -webkit-gradient(
+    linear,
+    left top,
+    right top,
+    from(rgba(255, 255, 255, 0)),
+    to(rgba(255, 255, 255, 0.3))
+  );
+  background: linear-gradient(
+    to right,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.3) 100%
+  );
+  -webkit-transform: skewX(-25deg);
+  transform: skewX(-25deg);
 }
 
 #products h3 {
@@ -374,8 +407,24 @@ a {
   display: block;
   font-size: 16px;
   color: #888888;
+  cursor: pointer;
 }
 
+#products .load-more button:hover {
+  background: #707070;
+  color: #fff;
+}
+
+@-webkit-keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
+@keyframes shine {
+  100% {
+    left: 125%;
+  }
+}
 
 /* Loader */
 
@@ -398,7 +447,6 @@ a {
     transform: rotate(360deg);
   }
 }
-
 
 /* Newsletter */
 
@@ -465,7 +513,6 @@ a {
   display: block;
   text-align: center;
 }
-
 
 /* Footer */
 
