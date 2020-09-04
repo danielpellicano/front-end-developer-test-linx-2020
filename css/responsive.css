@@ -1,3 +1,85 @@
+@media (max-width: 576px) {
+  html {
+    overflow-x: hidden;
+  }
+  .container {
+    box-sizing: border-box;
+  }
+  /* Header */
+  #header {
+    min-height: 425px;
+  }
+  #header nav ul {
+    flex-wrap: wrap;
+    display: flex;
+  }
+  #header nav ul li {
+    width: 50%;
+    text-align: center;
+  }
+  #header nav ul li a {
+    padding: 11px 15px;
+    margin: 11px;
+  }
+  #header .container {
+    align-items: initial;
+    text-align: initial;
+  }
+  #header:after {
+    height: 425px;
+    transform: rotate(-340deg);
+    left: -145px;
+    top: 36px;
+  }
+  /* Help */
+  #help .container {
+    display: block;
+    box-sizing: border-box;
+  }
+  /* Products */
+  #products .row-product .product {
+    flex: initial;
+    max-width: initial;
+  }
+  /* Newsletter */
+  #newsletter .row {
+    display: block;
+  }
+  #newsletter .row .col-input {
+    max-width: 100%;
+  }
+  #newsletter input {
+    box-sizing: border-box;
+  }
+  /* Footer */
+  #footer {
+    height: 200px;
+    display: block;
+  }
+  #footer:after {
+    top: -75px;
+  }
+  #products .img-product {
+    width: 50%;
+    float: left;
+    margin-right: 17px;
+  }
+  #products .row-product .product {
+    width: 100%;
+  }
+  #products .row-product .product p {
+    display: none;
+  }
+  #products .btn-comprar {
+    width: 44%;
+    float: right;
+  }
+  #products .img-product {
+    max-width: 100%;
+    height: auto;
+  }
+}
+
 @media (min-width: 576px) {
   .container {
     max-width: 540px;

@@ -3,63 +3,125 @@ function validateForm() {
   event.preventDefault();
   /* name validate */
   let nameval = document.getElementById('name').value;
-  let error = document.createElement('span');
   if (nameval == '') {
+    let error = document.createElement('span');
     let name = document.getElementById('name');
     let errorname = document.createTextNode('Por favor preencha seu nome');
     error.appendChild(errorname);
     name.classList.add('error');
     name.after(error);
-    document.addEventListener('keydown', function (event) {
+    document.addEventListener('keydown', function(event) {
       error.remove();
       name.classList.remove('error');
     });
-  } else {
   }
+  /* CPF Validate */
+  let cpf = document.getElementById('cpf').value;
+  if (cpf == '') {
+    let cpfInput = document.getElementById('cpf');
+    let errorCpf = document.createElement('span');
+    let errorCpfText = document.createTextNode('Por favor preencha seu CPF');
+    errorCpf.appendChild(errorCpfText);
+    cpfInput.classList.add('error');
+    cpfInput.after(errorCpf);
+  } else {
+    document.addEventListener('keydown', function(event) {
+      errorCpf.remove();
+      cpf.classList.remove('error');
+    });
+  }
+
+
   /* email validate */
   let email = document.getElementById('email').value;
-
-  function ValidateEmail(mail) {
-    if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
-      return true;
-    }
-    alert('You have entered an invalid email address!');
-    return false;
+  let errorElement = document.createElement('span');
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    return (true)
+  } else {
+    let emailInput = document.getElementById('email');
+    let erroremail = document.createTextNode('Por favor preencha seu email corretamente');
+    errorElement.appendChild(erroremail);
+    emailInput.classList.add('error');
+    emailInput.after(errorElement);
+    document.addEventListener('keydown', function(event) {
+      errorElement.remove();
+      email.classList.remove('error');
+    });
+    return (false);
   }
 }
 
-/* cpf validate */
-document.addEventListener('keydown', function (event) {
+document.addEventListener('keydown', function(event) {
   //pega o evento de precionar uma tecla
   if (event.keyCode != 46 && event.keyCode != 8) {
     //verifica se a tecla precionada nao e um backspace e delete
     var i = document.getElementById('cpf').value.length; //aqui pega o tamanho do input
     if (i === 3 || i === 7)
-      //aqui faz a divisoes colocando um ponto no terceiro e setimo indice
+    //aqui faz a divisoes colocando um ponto no terceiro e setimo indice
       document.getElementById('cpf').value =
-        document.getElementById('cpf').value + '.';
+      document.getElementById('cpf').value + '.';
     else if (i === 11)
-      //aqui faz a divisao colocando o tracinho no decimo primeiro indice
+    //aqui faz a divisao colocando o tracinho no decimo primeiro indice
       document.getElementById('cpf').value =
-        document.getElementById('cpf').value + '-';
+      document.getElementById('cpf').value + '-';
   }
 });
 
+/* Validate Form Newsletter */
+
+function validateFormNews() {
+  event.preventDefault();
+  /* name validate */
+  let namevalnews = document.getElementById('name-news').value;
+  let error = document.createElement('span');
+  if (namevalnews == '') {
+    let name = document.getElementById('name-news');
+    let errorname = document.createTextNode('Por favor preencha seu nome');
+    error.appendChild(errorname);
+    name.classList.add('error');
+    name.after(error);
+    document.addEventListener('keydown', function(event) {
+      error.remove();
+      name.classList.remove('error');
+    });
+  }
+
+  /* email validate */
+  let email = document.getElementById('email-news').value;
+  let errorElement = document.createElement('span');
+  if (/^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email)) {
+    return (true)
+  } else {
+    let emailInput = document.getElementById('email-news');
+    let erroremail = document.createTextNode('Por favor preencha seu email corretamente');
+    errorElement.appendChild(erroremail);
+    emailInput.classList.add('error');
+    emailInput.after(errorElement);
+    document.addEventListener('keydown', function(event) {
+      errorElement.remove();
+      emailInput.classList.remove('error');
+    });
+    return (false);
+
+  }
+
+}
+
+
 /* Api Function */
-window.onload = function () {
+window.onload = function() {
   const url =
     'https://frontend-intern-challenge-api.iurykrieger.now.sh/products?page=1';
   fetch(url)
-    .then(function (response) {
+    .then(function(response) {
       return response.json();
     })
-    .then(function (data) {
+    .then(function(data) {
       var loader = document.getElementById('loader');
       loader.style.display = 'none';
-      console.log(data.products);
       appendData(data);
     })
-    .catch(function (err) {
+    .catch(function(err) {
       console.log('error: ' + err);
     });
 
@@ -132,14 +194,14 @@ window.onload = function () {
     function pagination() {
       var pagination = 'https://' + data.nextPage;
       fetch(pagination)
-        .then(function (response) {
+        .then(function(response) {
           return response.json();
         })
-        .then(function (data) {
+        .then(function(data) {
           divLoadMore.remove();
           appendData(data);
         })
-        .catch(function (err) {
+        .catch(function(err) {
           console.log('error: ' + err);
         });
     }
