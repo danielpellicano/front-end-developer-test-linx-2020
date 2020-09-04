@@ -10,10 +10,10 @@ Este é um projeto de teste para a Vaga de Desenvolvedor Front-end na Linx
 
 Não é necessário instalação, apenas acesso a um navegador web
 
-# Observations
+## Observations
 
 O Design Responsivo foi feito apenas de 586px para baixo
 
-# Final result
+## Final result
 
 🎈 https://linx.danielpellicano.com.br/
